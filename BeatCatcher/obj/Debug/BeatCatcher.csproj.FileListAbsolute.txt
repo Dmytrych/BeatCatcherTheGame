@@ -1,0 +1,16 @@
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\bin\Debug\BeatCatcher.exe.config
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\bin\Debug\BeatCatcher.exe
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\bin\Debug\BeatCatcher.pdb
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher.csprojAssemblyReference.cache
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\MainWindow.g.cs
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\App.g.cs
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher_MarkupCompile.cache
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher_MarkupCompile.lref
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\MainWindow.baml
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher.g.resources
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher.Properties.Resources.resources
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher.csproj.GenerateResource.cache
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher.csproj.CoreCompileInputs.cache
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher.exe
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\BeatCatcher.pdb
+C:\Users\1\source\repos\BeatCatcher\BeatCatcher\obj\Debug\App.baml
