@@ -4,19 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BeatCatcher"
-        mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized"
-        Background="Black">
-    <Window.Resources>
-        <Style TargetType="Button" x:Key="Wid">
-            <Setter Property="Width" Value="200" />
-            <Setter Property="Margin" Value="200" />
-        </Style>
-    </Window.Resources>
-    <Grid x:Name="mainGrid">
+        mc:Ignorable="d" ResizeMode="NoResize" Width="1900" Height="1080"
+        Title="MainWindow">
+    <Window.Background>
+        <ImageBrush ImageSource="Background.png"/>
+    </Window.Background>
+    <Grid x:Name="mainGrid" Margin="0,0,0,0">
         <Button x:Name="StartButton" FontFamily="./#Xirod"
                 MinHeight="30" MinWidth="140" 
                 VerticalAlignment="Center" HorizontalAlignment="Center"
+                Background="Black" Foreground="Aqua"
                 Click="StartButton_Click">Start Game</Button>
     </Grid>
 </Window>

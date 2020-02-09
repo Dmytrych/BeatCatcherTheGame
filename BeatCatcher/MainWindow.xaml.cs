@@ -28,7 +28,7 @@ namespace BeatCatcher
         public void StartButton_Click(object sender, RoutedEventArgs e)
         {
             (sender as UIElement).Visibility = Visibility.Hidden;
-            BlockRoad road = new BlockRoad(new Point(this.Width / 2, this.Height / 2), this);
+            BlockRoad road = new BlockRoad(new Point(this.ActualWidth / 2, this.ActualHeight / 2), this);
             road.CreateMovingBlock(mainGrid, 0);
             road.CreateMovingBlock(mainGrid, 20);
             road.CreateMovingBlock(mainGrid, 40);
@@ -39,7 +39,6 @@ namespace BeatCatcher
             road.CreateMovingBlock(mainGrid, 140);
             road.CreateMovingBlock(mainGrid, 160);
             road.CreateMovingBlock(mainGrid, 180);
-            this.WindowState = WindowState.Maximized;
         }
     }
     class BlockRoad
@@ -56,27 +55,31 @@ namespace BeatCatcher
         }
         public void CreateMovingBlock(Grid grid, double angle)
         {
-            angle *= deg;
-            Point startingPoint = new Point(center.X + ViewDistance * System.Math.Cos(angle), center.Y - ViewDistance * System.Math.Sin(angle));
+            ThicknessAnimation movement;
+            DoubleAnimation resize;
             Image block = CreateBlock(grid);
-            block.VerticalAlignment = VerticalAlignment.Top;
-            block.HorizontalAlignment = HorizontalAlignment.Left;
+            angle *= deg;
             grid.Children.Add(block);
-            ThicknessAnimation movement = ThicknessAnimationBlockMovement(startingPoint, angle, grid.ActualHeight / 2);
-            DoubleAnimation resize = DoubleAnimationResizeBlock();
+            //Ellipse el = new Ellipse();
+            //grid.Children.Add(el);
+            //el.Width = 10;
+            //el.Height = 10;
+            //el.Fill = Brushes.White;
+            movement = ThicknessAnimationBlockMovement( angle, grid.ActualHeight / 2);
+            resize = DoubleAnimationResizeBlock();
             block.BeginAnimation(Image.MarginProperty, movement);
             block.BeginAnimation(Image.WidthProperty, resize);
             block.BeginAnimation(Image.HeightProperty, resize);
         }
-        private ThicknessAnimation ThicknessAnimationBlockMovement(Point startPosition, double angleDeg, double Length)
+        private ThicknessAnimation ThicknessAnimationBlockMovement(double angleDeg, double Length)
         {
             ThicknessAnimation animation = new ThicknessAnimation();
             Thickness pos = new Thickness();
-            pos.Left = startPosition.X;
-            pos.Top = startPosition.Y;
+            pos.Left = - ViewDistance * System.Math.Cos(angleDeg);
+            pos.Top = - ViewDistance * System.Math.Sin(angleDeg);
             animation.From = pos;
-            pos.Left = startPosition.X + System.Math.Cos(angleDeg) * Length;
-            pos.Top = startPosition.Y - System.Math.Sin(angleDeg) * Length;
+            pos.Left = - System.Math.Cos(angleDeg) * Length;
+            pos.Top = - System.Math.Sin(angleDeg) * Length;
             animation.To = pos;
             animation.AccelerationRatio = 1;
             animation.Duration = TimeSpan.FromSeconds(2);
@@ -91,8 +94,6 @@ namespace BeatCatcher
             img.EndInit();
             Image imag = new Image();
             imag.Source = img;
-            imag.Width = StartingBlockSize;
-            imag.Height = StartingBlockSize;
             return imag;
         }
         private DoubleAnimation DoubleAnimationResizeBlock()
