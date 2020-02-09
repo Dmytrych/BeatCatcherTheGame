@@ -27,7 +27,6 @@ namespace BeatCatcher
         }
         public void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            (sender as UIElement).Visibility = Visibility.Hidden;
             BlockRoad road = new BlockRoad(new Point(this.ActualWidth / 2, this.ActualHeight / 2), this);
             road.CreateMovingBlock(mainGrid, 0);
             road.CreateMovingBlock(mainGrid, 20);
